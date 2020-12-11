@@ -150,6 +150,8 @@ export default class LiteCreditCardInput extends Component {
         ]}>
           <CCInput {...this._inputProps("number")}
             keyboardType="numeric"
+                   placeholder=""
+                   value=""
             containerStyle={s.numberInput} />
         </View>
         <TouchableOpacity onPress={showRightPart ? this._focusNumber : this._focusExpiry }>
