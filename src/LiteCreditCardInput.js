@@ -135,7 +135,7 @@ export default class LiteCreditCardInput extends Component {
     if (focused === "cvc" && type === "american-express") return "cvc_amex";
     if (focused === "cvc") return "cvc";
     if (type) return type;
-    return "placeholder";
+    return "";
   }
 
   render() {
