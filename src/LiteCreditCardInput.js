@@ -25,8 +25,8 @@ const s = StyleSheet.create({
     overflow: "hidden",
   },
   icon: {
-    width: 48,
-    height: 40,
+    width: 32,
+    height: 20,
     resizeMode: "contain",
   },
   expanded: {
@@ -155,26 +155,6 @@ export default class LiteCreditCardInput extends Component {
         <TouchableOpacity onPress={showRightPart ? this._focusNumber : this._focusExpiry }>
           <Image style={s.icon} source={Icons[this._iconToShow()]} />
         </TouchableOpacity>
-        <View style={[
-          s.rightPart,
-          showRightPart ? s.expanded : s.hidden,
-        ]}>
-          <TouchableOpacity onPress={this._focusNumber}
-            style={s.last4}>
-            <View pointerEvents={"none"}>
-              <CCInput field="last4"
-                keyboardType="numeric"
-                value={ numberStatus === "valid" ? number.substr(number.length - 4, 4) : "" }
-                inputStyle={[s.input, inputStyle]}
-                containerStyle={[s.last4Input]} />
-            </View>
-          </TouchableOpacity>
-          <CCInput {...this._inputProps("expiry")}
-            keyboardType="numeric"
-            containerStyle={s.expiryInput} />
-          <CCInput {...this._inputProps("cvc")}
-            keyboardType="numeric"
-            containerStyle={s.cvcInput} />
         </View>
       </View>
     );
