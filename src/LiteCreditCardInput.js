@@ -24,6 +24,10 @@ const s = StyleSheet.create({
     alignItems: "center",
     overflow: "hidden",
   },
+  iconContainer: {
+    height: '100%',
+    justifyContent: 'center',
+  },
   icon: {
     width: 32,
     height: 20,
@@ -154,7 +158,7 @@ export default class LiteCreditCardInput extends Component {
                    value=""
             containerStyle={s.numberInput} />
         </View>
-        <TouchableOpacity onPress={showRightPart ? this._focusNumber : this._focusExpiry }>
+        <TouchableOpacity style={s.iconContainer} onPress={showRightPart ? this._focusNumber : this._focusExpiry }>
           <Image style={s.icon} source={Icons[this._iconToShow()]} />
         </TouchableOpacity>
       </View>
